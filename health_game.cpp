@@ -3,7 +3,8 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
 int playerxp = 0;
 int steps = 0;
 int level = 1;
@@ -15,6 +16,7 @@ cout << "                         Let's see how well you did today!"<< endl;
 cout<< "                       Please enter the number of steps you took. ";
 
 cin >> steps;
+int oldlevel = level;
 cout<< endl;
 playerxp = playerxp + (steps/10);
 if (playerxp >= 0 && playerxp <= 999) { level = 1; xpneeded = 1000; }
@@ -27,6 +29,9 @@ if (playerxp >= 9000 && playerxp <= 11199) { level = 7; xpneeded = 12000; }
 if (playerxp >= 12000 && playerxp <= 13599) { level = 8; xpneeded = 13600; }
 if (playerxp >= 13600 && playerxp <= 16199) { level = 9; xpneeded = 16200; }
 if (playerxp >= 16200) { level = 10; xpneeded = 999999; }
+if (level > oldlevel)
+
+    cout<< "Congratulations!! You have reached level " << level<< endl;
 cout <<"                          Nice Job! You have earned:" << (steps/10) <<  "xp";
 
 return 0;
